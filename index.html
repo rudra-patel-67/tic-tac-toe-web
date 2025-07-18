@@ -30,13 +30,14 @@
         <script>function saveFileFromMEMFSToDisk(e, a) { var i, o = FS.readFile(e); i = new Blob([o.buffer], { type: "application/octet-binary" }), saveAs(i, a) }</script>
     </head>
 
-    <body><div id="game-screen">
+    <body>
+        <div id="game-screen">
         <canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
-            <p id=output>
-                <script>var Module = { print: function () { var e = document.getElementById("output"); return e && (e.value = ""), function (n) { arguments.length > 1 && (n = Array.prototype.slice.call(arguments).join(" ")), console.log(n), e && (e.value += n + "\n", e.scrollTop = e.scrollHeight) } }(), canvas: document.getElementById("canvas") }
-                </script>
-                <script src=index.js async></script>
-    </div>
+        <p id=output>
+            <script>var Module = { print: function () { var e = document.getElementById("output"); return e && (e.value = ""), function (n) { arguments.length > 1 && (n = Array.prototype.slice.call(arguments).join(" ")), console.log(n), e && (e.value += n + "\n", e.scrollTop = e.scrollHeight) } }(), canvas: document.getElementById("canvas") }
+            </script>
+            <script src=index.js async></script>
+        </div>
     </body>
 
     </html>
